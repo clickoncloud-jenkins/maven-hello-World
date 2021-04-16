@@ -21,5 +21,10 @@ pipeline {
                  sh "mvn package"
             }
         }
+        stage('Run-Application') {
+            steps {
+                 sh "java -jar /var/jenkins_home/workspace/maven-pipeline/target/my-app-1.0-SNAPSHOT.jar"
+            }
+        }
     }
 }
